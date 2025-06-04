@@ -1,0 +1,6 @@
+{
+  "files.exclude": {
+    "**/android/app": true,
+    "**/android/app/**": true
+  }
+}

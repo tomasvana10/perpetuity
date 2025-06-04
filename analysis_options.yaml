@@ -11,3 +11,8 @@ linter:
     use_key_in_widget_constructors: false
     lines_longer_than_80_chars: true
     prefer_double_quotes: true
+
+analyzer:
+  exclude:
+    - lib/habit/model/json/**
+    - android/**
