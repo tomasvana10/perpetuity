@@ -1,9 +1,10 @@
+import "package:dynamic_color/dynamic_color.dart";
 import "package:flutter/material.dart";
+import "package:perpetuity/pages/home/scaffold.dart";
 import "package:perpetuity/l10n/app_localizations.dart";
-import "package:perpetuity/theme/dark_theme.dart";
-import "package:perpetuity/theme/light_theme.dart";
+import "package:perpetuity/pages/home/dashboard.dart";
 
-void main() {
+void main() async {
   runApp(const Perpetuity());
 }
 
@@ -12,25 +13,33 @@ class Perpetuity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "A free, feature-rich habit tracker",
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text(AppLocalizations.of(context)!.greeting("bob"))),
+    return DynamicColorBuilder(
+      builder: (light, dark) {
+        return MaterialApp(
+          title: "A free, feature-rich habit tracker",
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme:
+                light ?? ColorScheme.fromSeed(seedColor: Colors.indigo),
+            useMaterial3: true,
+          ),
+          darkTheme: ThemeData(
+            colorScheme:
+                dark ??
+                ColorScheme.fromSeed(
+                  seedColor: Colors.indigo,
+                  brightness: Brightness.dark,
+                ),
+            brightness: Brightness.dark,
+            useMaterial3: true,
+          ),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: HomePageScaffold(
+            destinations: [DashboardPage(), DashboardPage(), DashboardPage()],
+          ),
+        );
+      },
     );
   }
 }
