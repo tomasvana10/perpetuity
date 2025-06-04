@@ -7,16 +7,24 @@ environment:
   sdk: ^3.8.1
 
 dependencies:
+  dynamic_color: ^1.7.0
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   intl: any
+  jiffy: ^6.4.3
+  json_annotation: ^4.9.0
+  path_provider: ^2.1.5
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  json_serializable: ^6.9.5
+  build_runner: ^2.4.15
+  source_gen: ^2.0.0
 
 flutter:
   uses-material-design: true
