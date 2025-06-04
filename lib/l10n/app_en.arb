@@ -1,13 +1,5 @@
 {
   "@@locale": "en",
-  "greeting": "Hello {name}",
-  "@greeting": {
-    "description": "Test greeting message",
-    "placeholders": {
-      "name": {
-        "type": "String",
-        "example": "Bob"
-      }
-    }
-  }
+  "dashboard": "Dashboard",
+  "@dashboard": {}
 }

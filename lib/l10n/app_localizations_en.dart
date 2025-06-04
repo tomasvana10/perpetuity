@@ -9,7 +9,5 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String greeting(String name) {
-    return 'Hello $name';
-  }
+  String get dashboard => 'Dashboard';
 }

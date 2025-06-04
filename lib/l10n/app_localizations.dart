@@ -94,11 +94,11 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
-  /// Test greeting message
+  /// No description provided for @dashboard.
   ///
   /// In en, this message translates to:
-  /// **'Hello {name}'**
-  String greeting(String name);
+  /// **'Dashboard'**
+  String get dashboard;
 }
 
 class _AppLocalizationsDelegate
