@@ -4,7 +4,7 @@ import "package:perpetuity/pages/home/scaffold.dart";
 import "package:perpetuity/l10n/app_localizations.dart";
 import "package:perpetuity/pages/home/dashboard.dart";
 
-void main() async {
+void main() {
   runApp(const Perpetuity());
 }
 
