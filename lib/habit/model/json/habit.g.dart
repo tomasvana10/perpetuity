@@ -24,8 +24,8 @@ Map<String, dynamic> _$HabitToJson(Habit instance) => <String, dynamic>{
   'description': instance.description,
   'category': _$HabitCategoryEnumMap[instance.category]!,
   'intent': _$HabitIntentEnumMap[instance.intent]!,
-  'schedule': instance.schedule,
-  'tracker': instance.tracker,
+  'schedule': instance.schedule.toJson(),
+  'tracker': instance.tracker.toJson(),
   'uuid': instance.uuid,
   'creationTime': instance.creationTime.toIso8601String(),
 };

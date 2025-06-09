@@ -6,20 +6,20 @@ part "json/tracker.g.dart";
 
 typedef HabitCompletion = ({DateTime completionTime});
 
-@JsonSerializable(constructor: "create")
+@JsonSerializable(constructor: "create", explicitToJson: true)
 class HabitTracker {
   int maxDailyCompletions;
   bool canExceedDailyCompletions;
   HabitTrackingMethod trackingMethod;
 
-  final HabitStreakManager streak;
+  final HabitStreakManager streakManager;
   final List<HabitCompletion> habitCompletions;
 
   HabitTracker.create({
     required this.maxDailyCompletions,
     required this.canExceedDailyCompletions,
     required this.trackingMethod,
-    required this.streak,
+    required this.streakManager,
     List<HabitCompletion>? habitCompletions,
   }) : habitCompletions = habitCompletions ?? [];
 

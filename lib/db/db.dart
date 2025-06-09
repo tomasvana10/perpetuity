@@ -6,12 +6,11 @@ import "package:path/path.dart" as path;
 class PerpetuityDB<K, V> {
   final String _dbName;
   //ignore: unused_field
-  final String _storeName;
-  //ignore: unused_field
   final StoreFactory _storeFactory;
+  final String _storeName;
 
   late Database _db;
-  late final StoreRef<K, V> _store;
+  late StoreRef<K, V> _store;
 
   @protected
   PerpetuityDB({
@@ -21,12 +20,13 @@ class PerpetuityDB<K, V> {
   }) : _dbName = dbName,
        _storeFactory = storeFactory,
        _storeName = storeName,
-       _store = storeFactory.store(storeName) as StoreRef<K, V>;
+       _store = storeFactory.store(storeName).cast();
 
   String get _dbFileName => "$_dbName.db";
 
   Future<void> init() async {
     final dir = await getApplicationDocumentsDirectory();
+    await dir.create(recursive: true);
     final dbPath = path.join(dir.path, _dbFileName);
     _db = await databaseFactoryIo.openDatabase(dbPath);
   }

@@ -15,6 +15,6 @@ extension HabitTrackerExtension on HabitTracker {
 
   void complete() {
     habitCompletions.add((completionTime: DateTime.now()));
-    streak.bumpStreak(habitCompletions);
+    streakManager.bumpStreak(habitCompletions);
   }
 }

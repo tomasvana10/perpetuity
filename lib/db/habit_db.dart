@@ -9,7 +9,6 @@ class HabitDB extends PerpetuityDB<int, Habit> {
   HabitDB._()
     : super(
         dbName: "perpetuity_habits",
-        // ensure the store corresponds to the first type param!!
         storeFactory: intMapStoreFactory,
         storeName: "perpetuity_habits_store",
       );

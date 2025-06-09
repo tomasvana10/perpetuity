@@ -14,8 +14,8 @@ HabitTracker _$HabitTrackerFromJson(Map<String, dynamic> json) =>
         _$HabitTrackingMethodEnumMap,
         json['trackingMethod'],
       ),
-      streak: HabitStreakManager.fromJson(
-        json['streak'] as Map<String, dynamic>,
+      streakManager: HabitStreakManager.fromJson(
+        json['streakManager'] as Map<String, dynamic>,
       ),
       habitCompletions: (json['habitCompletions'] as List<dynamic>?)
           ?.map(
@@ -37,7 +37,7 @@ Map<String, dynamic> _$HabitTrackerToJson(
   'maxDailyCompletions': instance.maxDailyCompletions,
   'canExceedDailyCompletions': instance.canExceedDailyCompletions,
   'trackingMethod': _$HabitTrackingMethodEnumMap[instance.trackingMethod]!,
-  'streak': instance.streak,
+  'streakManager': instance.streakManager.toJson(),
   'habitCompletions': instance.habitCompletions
       .map(
         (e) => <String, dynamic>{

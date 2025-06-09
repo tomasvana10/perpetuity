@@ -6,7 +6,7 @@ import "package:uuid/uuid.dart";
 
 part "json/habit.g.dart";
 
-@JsonSerializable(constructor: "create")
+@JsonSerializable(constructor: "create", explicitToJson: true)
 class Habit {
   String name;
   String description;
