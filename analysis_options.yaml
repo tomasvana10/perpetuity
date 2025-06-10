@@ -14,5 +14,5 @@ linter:
 
 analyzer:
   exclude:
-    - lib/habit/model/json/**
+    - lib/habit/model/isar/**
     - android/**

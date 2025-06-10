@@ -1,65 +1,40 @@
-import "package:flutter/foundation.dart";
-import "package:sembast/sembast_io.dart";
+import "package:isar/isar.dart";
 import "package:path_provider/path_provider.dart";
-import "package:path/path.dart" as path;
+import "package:perpetuity/habit/model/habit.dart";
+import "package:shared_preferences/shared_preferences.dart";
 
-class PerpetuityDB<K, V> {
-  final String _dbName;
-  //ignore: unused_field
-  final StoreFactory _storeFactory;
-  final String _storeName;
+class AppDB {
+  static const _latestSchemaVersion = 1;
 
-  late Database _db;
-  late StoreRef<K, V> _store;
+  static const _schemas = [HabitSchema];
 
-  @protected
-  PerpetuityDB({
-    required String dbName,
-    required StoreFactory storeFactory,
-    required String storeName,
-  }) : _dbName = dbName,
-       _storeFactory = storeFactory,
-       _storeName = storeName,
-       _store = storeFactory.store(storeName).cast();
+  static Isar? _db;
 
-  String get _dbFileName => "$_dbName.db";
+  static Future<Isar> get db async => _db ??= await _initDb();
 
-  Future<void> init() async {
+  static Future<Isar> _initDb() async {
     final dir = await getApplicationDocumentsDirectory();
-    await dir.create(recursive: true);
-    final dbPath = path.join(dir.path, _dbFileName);
-    _db = await databaseFactoryIo.openDatabase(dbPath);
+
+    final isar = await Isar.open(AppDB._schemas, directory: dir.path);
+
+    await _performMigrationIfNeeded(isar);
+
+    return isar;
   }
 
-  Future<K> insert(V val) async {
-    return await _store.add(_db, val);
-  }
+  static Future<void> _performMigrationIfNeeded(Isar isar) async {
+    final prefs = await SharedPreferences.getInstance();
 
-  Future<void> update(K key, V val) async {
-    await _store.record(key).put(_db, val);
-  }
+    final currentVersion =
+        prefs.getInt("version") ?? AppDB._latestSchemaVersion;
 
-  Future<V?> get(K key) async {
-    return await _store.record(key).get(_db);
-  }
+    // NOTE: refer to https://isar.dev/recipes/data_migration.html 
+    // for samples on how to implement manual migration once required
+    switch (currentVersion) {
+      case 1:
+        print("You are on the current schema version");
+    }
 
-  Future<void> delete(K key) async {
-    await _store.record(key).delete(_db);
-  }
-
-  Future<bool> exists(K key) async {
-    return await _store.record(key).exists(_db);
-  }
-
-  Future<List<RecordSnapshot<K, V>>> getAll() async {
-    return await _store.find(_db);
-  }
-
-  Future<void> deleteAll() async {
-    await _store.delete(_db);
-  }
-
-  Future<List<RecordSnapshot<K, V>>> getWithFinder(Finder finder) async {
-    return await _store.find(_db, finder: finder);
+    await prefs.setInt("version", AppDB._latestSchemaVersion);
   }
 }

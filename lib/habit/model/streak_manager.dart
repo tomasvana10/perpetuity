@@ -1,7 +1,7 @@
-import "package:json_annotation/json_annotation.dart";
+import "package:isar/isar.dart";
 import "package:perpetuity/habit/model/aspect.dart";
 
-part "json/streak_manager.g.dart";
+part "isar/streak_manager.g.dart";
 
 enum HabitStreakLogEntryContext { milestone, broken }
 
@@ -22,23 +22,13 @@ typedef HabitStreakLogEntry = ({
   DateTime logTime,
 });
 
-@JsonSerializable(constructor: "create")
+@embedded
 class HabitStreakManager {
-  HabitStreakGoal streakGoal;
-  int streakIntervalCompletions;
-  int streak;
-  int bestStreak;
+  @enumerated
+  HabitStreakGoal streakGoal = HabitStreakGoal.daily;
+  int streakIntervalCompletions = 0;
+  int streak = 0;
+  int bestStreak = 0;
 
-  HabitStreakManager.create({
-    required this.streakGoal,
-    required this.streakIntervalCompletions,
-    int? streak,
-    int? bestStreak,
-  }) : streak = streak ?? 0,
-       bestStreak = bestStreak ?? 0;
-
-  factory HabitStreakManager.fromJson(Map<String, dynamic> json) =>
-      _$HabitStreakManagerFromJson(json);
-
-  Map<String, dynamic> toJson() => _$HabitStreakManagerToJson(this);
+  HabitStreakManager();
 }

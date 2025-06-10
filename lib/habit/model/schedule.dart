@@ -1,29 +1,20 @@
-import "package:json_annotation/json_annotation.dart";
+import "package:isar/isar.dart";
 import "package:perpetuity/habit/model/aspect.dart";
 
-part "json/schedule.g.dart";
+part "isar/schedule.g.dart";
 
-@JsonSerializable(constructor: "create")
+@embedded
 class HabitSchedule {
+  @ignore
   static final _defaultDays = "0123456";
+  @ignore
   static final _defaultNotificationDays = "0123456";
 
-  String days;
-  String notificationDays;
-  bool sendNotifications;
-  HabitTime time;
+  String days = HabitSchedule._defaultDays;
+  String notificationDays = HabitSchedule._defaultNotificationDays;
+  bool sendNotifications = true;
+  @enumerated
+  HabitTime time = HabitTime.any;
 
-  HabitSchedule.create({
-    String? days,
-    String? notificationDays,
-    required this.sendNotifications,
-    required this.time,
-  }) : days = days ?? HabitSchedule._defaultDays,
-       notificationDays =
-           notificationDays ?? HabitSchedule._defaultNotificationDays;
-
-  factory HabitSchedule.fromJson(Map<String, dynamic> json) =>
-      _$HabitScheduleFromJson(json);
-
-  Map<String, dynamic> toJson() => _$HabitScheduleToJson(this);
+  HabitSchedule();
 }

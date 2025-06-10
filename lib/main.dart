@@ -1,6 +1,5 @@
 import "package:dynamic_color/dynamic_color.dart";
 import "package:flutter/material.dart";
-import "package:perpetuity/db/habit_db.dart";
 import "package:perpetuity/pages/home/scaffold.dart";
 import "package:perpetuity/l10n/app_localizations.dart";
 import "package:perpetuity/pages/home/dashboard.dart";
@@ -8,7 +7,6 @@ import "package:perpetuity/pages/home/dashboard.dart";
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await HabitDB.instance.init();
   runApp(const Perpetuity());
 }
 

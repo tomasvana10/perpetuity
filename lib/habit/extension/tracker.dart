@@ -14,7 +14,7 @@ extension HabitTrackerExtension on HabitTracker {
       ).toLocal().isSame(Jiffy.now().toLocal(), unit: Unit.day);
 
   void complete() {
-    habitCompletions.add((completionTime: DateTime.now()));
+    habitCompletions.add(HabitCompletion());
     streakManager.bumpStreak(habitCompletions);
   }
 }
