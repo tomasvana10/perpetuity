@@ -5,9 +5,7 @@ import "package:shared_preferences/shared_preferences.dart";
 
 class AppDB {
   static const _latestSchemaVersion = 1;
-
   static const _schemas = [HabitSchema];
-
   static Isar? _db;
 
   static Future<Isar> get db async => _db ??= await _initDb();
