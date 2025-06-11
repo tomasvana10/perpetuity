@@ -1,1 +1,0 @@
-flutter emulators --launch Pixel_9_Pro
