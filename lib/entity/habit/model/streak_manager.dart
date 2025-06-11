@@ -1,7 +1,4 @@
-import "package:isar/isar.dart";
-import "package:perpetuity/entity/habit/model/aspect.dart";
-
-part "isar/streak_manager.g.dart";
+part of "tracker.dart";
 
 enum HabitStreakLogEntryContext { milestone, broken }
 
@@ -25,10 +22,15 @@ typedef HabitStreakLogEntry = ({
 @embedded
 class HabitStreakManager {
   @enumerated
-  HabitStreakGoal streakGoal = HabitStreakGoal.daily;
-  int streakIntervalCompletions = 0;
-  int streak = 0;
-  int bestStreak = 0;
+  HabitStreakGoal streakGoal;
+  int streakIntervalCompletions;
+  int streak;
+  int bestStreak;
 
-  HabitStreakManager();
+  HabitStreakManager({
+    this.streakGoal = HabitStreakGoal.daily,
+    this.streakIntervalCompletions = 0,
+    this.streak = 0,
+    this.bestStreak = 0,
+  });
 }

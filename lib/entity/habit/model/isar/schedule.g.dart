@@ -70,13 +70,14 @@ HabitSchedule _habitScheduleDeserialize(
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  final object = HabitSchedule();
-  object.days = reader.readString(offsets[0]);
-  object.notificationDays = reader.readString(offsets[1]);
-  object.sendNotifications = reader.readBool(offsets[2]);
-  object.time =
-      _HabitScheduletimeValueEnumMap[reader.readByteOrNull(offsets[3])] ??
-          HabitTime.any;
+  final object = HabitSchedule(
+    days: reader.readStringOrNull(offsets[0]) ?? HabitSchedule._defaultDays,
+    notificationDays: reader.readStringOrNull(offsets[1]) ??
+        HabitSchedule._defaultNotificationDays,
+    sendNotifications: reader.readBoolOrNull(offsets[2]) ?? true,
+    time: _HabitScheduletimeValueEnumMap[reader.readByteOrNull(offsets[3])] ??
+        HabitTime.any,
+  );
   return object;
 }
 
@@ -88,11 +89,13 @@ P _habitScheduleDeserializeProp<P>(
 ) {
   switch (propertyId) {
     case 0:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset) ?? HabitSchedule._defaultDays)
+          as P;
     case 1:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset) ??
+          HabitSchedule._defaultNotificationDays) as P;
     case 2:
-      return (reader.readBool(offset)) as P;
+      return (reader.readBoolOrNull(offset) ?? true) as P;
     case 3:
       return (_HabitScheduletimeValueEnumMap[reader.readByteOrNull(offset)] ??
           HabitTime.any) as P;

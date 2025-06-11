@@ -1,11 +1,14 @@
 import "package:dynamic_color/dynamic_color.dart";
 import "package:flutter/material.dart";
+import "package:perpetuity/db/main.dart";
 import "package:perpetuity/pages/home/scaffold.dart";
 import "package:perpetuity/l10n/app_localizations.dart";
 import "package:perpetuity/pages/home/dashboard.dart";
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  await AppDB.db; // accessing this getter initialises the database
 
   runApp(const Perpetuity());
 }

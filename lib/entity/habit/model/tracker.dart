@@ -1,8 +1,8 @@
 import "package:isar/isar.dart";
 import "package:perpetuity/entity/habit/model/aspect.dart";
-import "package:perpetuity/entity/habit/model/streak_manager.dart";
 
 part "isar/tracker.g.dart";
+part "streak_manager.dart";
 
 @embedded
 class HabitCompletion {
@@ -13,13 +13,17 @@ class HabitCompletion {
 
 @embedded
 class HabitTracker {
-  int maxDailyCompletions = 1;
-  bool canExceedDailyCompletions = true;
+  int maxDailyCompletions;
+  bool canExceedDailyCompletions;
   @enumerated
-  HabitTrackingMethod trackingMethod = HabitTrackingMethod.tick;
+  HabitTrackingMethod trackingMethod;
 
-  final HabitStreakManager streakManager = HabitStreakManager();
+  HabitStreakManager streak = HabitStreakManager();
   final List<HabitCompletion> habitCompletions = [];
 
-  HabitTracker();
+  HabitTracker({
+    this.maxDailyCompletions = 1,
+    this.canExceedDailyCompletions = true,
+    this.trackingMethod = HabitTrackingMethod.tick,
+  });
 }

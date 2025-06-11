@@ -6,15 +6,20 @@ part "isar/schedule.g.dart";
 @embedded
 class HabitSchedule {
   @ignore
-  static final _defaultDays = "0123456";
+  static const _defaultDays = "0123456";
   @ignore
-  static final _defaultNotificationDays = "0123456";
+  static const _defaultNotificationDays = "0123456";
 
-  String days = HabitSchedule._defaultDays;
-  String notificationDays = HabitSchedule._defaultNotificationDays;
-  bool sendNotifications = true;
+  String days;
+  String notificationDays;
+  bool sendNotifications;
   @enumerated
-  HabitTime time = HabitTime.any;
+  HabitTime time;
 
-  HabitSchedule();
+  HabitSchedule({
+    this.days = HabitSchedule._defaultDays,
+    this.notificationDays = HabitSchedule._defaultNotificationDays,
+    this.sendNotifications = true,
+    this.time = HabitTime.any,
+  });
 }

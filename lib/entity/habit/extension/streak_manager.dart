@@ -1,6 +1,5 @@
 import "package:jiffy/jiffy.dart";
 import "package:perpetuity/entity/habit/model/aspect.dart";
-import "package:perpetuity/entity/habit/model/streak_manager.dart";
 import "package:perpetuity/entity/habit/model/tracker.dart";
 
 extension HabitStreakManagerExtension on HabitStreakManager {

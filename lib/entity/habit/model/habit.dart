@@ -20,8 +20,8 @@ class Habit {
   final HabitSchedule schedule;
   final HabitTracker tracker;
 
-  final String uuid = Uuid().v4();
-  final DateTime creationTime = DateTime.now();
+  final String uuid;
+  final DateTime creationTime;
 
   Habit({
     required this.name,
@@ -30,5 +30,6 @@ class Habit {
     required this.intent,
     required this.schedule,
     required this.tracker,
-  });
+  }) : uuid = Uuid().v4(),
+       creationTime = DateTime.now();
 }
