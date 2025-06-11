@@ -1,6 +1,6 @@
 import "package:isar/isar.dart";
 import "package:path_provider/path_provider.dart";
-import "package:perpetuity/habit/model/habit.dart";
+import "package:perpetuity/entity/habit/model/habit.dart";
 import "package:shared_preferences/shared_preferences.dart";
 
 class AppDB {

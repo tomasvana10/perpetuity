@@ -1,6 +1,6 @@
 import "package:jiffy/jiffy.dart";
-import "package:perpetuity/habit/extension/streak_manager.dart";
-import "package:perpetuity/habit/model/tracker.dart";
+import "package:perpetuity/entity/habit/extension/streak_manager.dart";
+import "package:perpetuity/entity/habit/model/tracker.dart";
 
 extension HabitTrackerExtension on HabitTracker {
   HabitCompletion? get mostRecentCompletion =>

@@ -1,5 +1,5 @@
-import "package:perpetuity/habit/model/aspect.dart";
-import "package:perpetuity/habit/model/schedule.dart";
+import "package:perpetuity/entity/habit/model/aspect.dart";
+import "package:perpetuity/entity/habit/model/schedule.dart";
 
 extension HabitScheduleExtension on HabitSchedule {
   bool get canSendNotifications => sendNotifications;

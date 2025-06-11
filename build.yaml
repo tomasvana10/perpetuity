@@ -4,4 +4,4 @@ targets:
       source_gen|combining_builder:
         options:
           build_extensions:
-            "^lib/habit/model/{{}}.dart": "lib/habit/model/isar/{{}}.g.dart"
+            "^lib/entity/habit/model/{{}}.dart": "lib/entity/habit/model/isar/{{}}.g.dart"

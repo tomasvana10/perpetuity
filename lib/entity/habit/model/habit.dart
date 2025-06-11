@@ -1,7 +1,7 @@
 import "package:isar/isar.dart";
-import "package:perpetuity/habit/model/aspect.dart";
-import "package:perpetuity/habit/model/schedule.dart";
-import "package:perpetuity/habit/model/tracker.dart";
+import "package:perpetuity/entity/habit/model/aspect.dart";
+import "package:perpetuity/entity/habit/model/schedule.dart";
+import "package:perpetuity/entity/habit/model/tracker.dart";
 import "package:uuid/uuid.dart";
 
 part "isar/habit.g.dart";

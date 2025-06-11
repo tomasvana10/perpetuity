@@ -1,6 +1,6 @@
 import "package:isar/isar.dart";
-import "package:perpetuity/habit/model/aspect.dart";
-import "package:perpetuity/habit/model/streak_manager.dart";
+import "package:perpetuity/entity/habit/model/aspect.dart";
+import "package:perpetuity/entity/habit/model/streak_manager.dart";
 
 part "isar/tracker.g.dart";
 

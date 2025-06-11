@@ -1,5 +1,5 @@
 import "package:isar/isar.dart";
-import "package:perpetuity/habit/model/aspect.dart";
+import "package:perpetuity/entity/habit/model/aspect.dart";
 
 part "isar/schedule.g.dart";
 
