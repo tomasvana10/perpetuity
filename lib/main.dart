@@ -1,6 +1,8 @@
 import "package:dynamic_color/dynamic_color.dart";
 import "package:flutter/material.dart";
 import "package:perpetuity/db/main.dart";
+import "package:perpetuity/pages/home/charts.dart";
+import "package:perpetuity/pages/home/habits.dart";
 import "package:perpetuity/pages/home/scaffold.dart";
 import "package:perpetuity/l10n/app_localizations.dart";
 import "package:perpetuity/pages/home/dashboard.dart";
@@ -41,7 +43,7 @@ class Perpetuity extends StatelessWidget {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: HomePageScaffold(
-            destinations: [DashboardPage(), DashboardPage(), DashboardPage()],
+            destinations: [DashboardPage(), HabitPage(), ChartPage()],
           ),
         );
       },

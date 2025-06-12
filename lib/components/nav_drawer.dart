@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:perpetuity/l10n/app_localizations.dart";
 
 class PerpetuityNavigationDrawer extends StatelessWidget {
   @override
@@ -8,18 +9,18 @@ class PerpetuityNavigationDrawer extends StatelessWidget {
         Padding(
           padding: EdgeInsets.fromLTRB(28, 16, 16, 10),
           child: Text(
-            "Perpetuity",
+            AppLocalizations.of(context)!.perpetuity,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Padding(padding: EdgeInsets.fromLTRB(28, 16, 28, 10), child: Divider()),
         NavigationDrawerDestination(
           icon: Icon(Icons.settings),
-          label: Text("Settings"),
+          label: Text(AppLocalizations.of(context)!.settings),
         ),
         NavigationDrawerDestination(
           icon: Icon(Icons.help),
-          label: Text("Help & feedback"),
+          label: Text(AppLocalizations.of(context)!.helpAndFeedback),
         ),
       ],
     );
