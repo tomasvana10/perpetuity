@@ -22,6 +22,11 @@ class PerpetuityNavigationDrawer extends StatelessWidget {
           icon: Icon(Icons.help),
           label: Text(AppLocalizations.of(context)!.helpAndFeedback),
         ),
+        Padding(padding: EdgeInsets.fromLTRB(28, 10, 28, 10), child: Divider()),
+        NavigationDrawerDestination(
+          icon: Icon(Icons.volunteer_activism),
+          label: Text(AppLocalizations.of(context)!.credits),
+        ),
       ],
     );
   }
