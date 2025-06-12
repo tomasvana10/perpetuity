@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:perpetuity/components/app_bar.dart";
+import "package:perpetuity/components/nav_drawer.dart";
 import "package:perpetuity/pages/home/home_page_tab.dart";
 
 class HomePageScaffold extends StatefulWidget {
@@ -21,6 +22,7 @@ class _HomePageScaffoldState extends State<HomePageScaffold> {
         onDestinationSelected: (int index) =>
             setState(() => _currentPageIndex = index),
         selectedIndex: _currentPageIndex,
+        backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         destinations: widget.destinations.map((dest) {
           final icons = (dest as HomePageTab).icons;
@@ -31,37 +33,13 @@ class _HomePageScaffoldState extends State<HomePageScaffold> {
           );
         }).toList(),
       ),
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Padding(
         padding: EdgeInsets.fromLTRB(16, 16, 0, 0),
         child: widget.destinations[_currentPageIndex],
       ),
-      drawer: NavigationDrawer(
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(28, 16, 16, 10),
-            child: Text(
-              "Perpetuity",
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
-            child: Divider(),
-          ),
-          NavigationDrawerDestination(
-            icon: Icon(Icons.settings),
-            label: Text("Settings"),
-          ),
-          NavigationDrawerDestination(
-            icon: Icon(Icons.help),
-            label: Text("Help & feedback"),
-          ),
-        ],
-      ),
-      appBar: PerpetuityAppBar(
-        title: (widget.destinations[_currentPageIndex] as HomePageTab)
-            .getLocalisedIdent(context),
-      ),
+      drawer: PerpetuityNavigationDrawer(),
+      appBar: PerpetuityAppBar(title: "Perpetuity"),
     );
   }
 }
