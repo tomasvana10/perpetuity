@@ -135,6 +135,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Help & feedback'**
   String get helpAndFeedback;
+
+  /// No description provided for @credits.
+  ///
+  /// In en, this message translates to:
+  /// **'Credits'**
+  String get credits;
+
+  /// No description provided for @habitCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'{category, select, mind{Mind} health{Health & Fitness} productivity{Productivity} finance{Finance} social{Social} environment{Environment} self{Self-care} misc{Miscellaneous} other{Unknown}}'**
+  String habitCategory(String category);
+
+  /// No description provided for @habitIntent.
+  ///
+  /// In en, this message translates to:
+  /// **'{intent, select, build{Build} quit{Quit} other{Unknown}}'**
+  String habitIntent(String intent);
+
+  /// No description provided for @habitTime.
+  ///
+  /// In en, this message translates to:
+  /// **'{time, select, any{Any} morning{Morning} afternoon{Afternoon} evening{Evening} night{Night} other{Unknown}}'**
+  String habitTime(String time);
+
+  /// No description provided for @habitStreakGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'{goal, select, none{None} daily{Daily} weekly{Weekly} monthly{Monthly} other{Unknown}}'**
+  String habitStreakGoal(String goal);
+
+  /// No description provided for @habitTrackingMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'{method, select, tick{Tick-off to track} value{Track by value} other{Unknown}}'**
+  String habitTrackingMethod(String method);
 }
 
 class _AppLocalizationsDelegate

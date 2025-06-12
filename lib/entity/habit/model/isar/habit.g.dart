@@ -203,7 +203,7 @@ const _HabitcategoryEnumValueMap = {
   'social': 4,
   'environment': 5,
   'self': 6,
-  'other': 7,
+  'misc': 7,
 };
 const _HabitcategoryValueEnumMap = {
   0: HabitCategory.mind,
@@ -213,7 +213,7 @@ const _HabitcategoryValueEnumMap = {
   4: HabitCategory.social,
   5: HabitCategory.environment,
   6: HabitCategory.self,
-  7: HabitCategory.other,
+  7: HabitCategory.misc,
 };
 const _HabitintentEnumValueMap = {
   'build': 0,

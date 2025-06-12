@@ -1,7 +1,8 @@
-import "package:perpetuity/util/extensions.dart";
+import "package:flutter/widgets.dart";
+import "package:perpetuity/l10n/app_localizations.dart";
 
 abstract interface class HabitAspect {
-  String get repr;
+  String getRepr(BuildContext context);
 }
 
 enum HabitCategory implements HabitAspect {
@@ -12,19 +13,10 @@ enum HabitCategory implements HabitAspect {
   social,
   environment,
   self,
-  other;
+  misc;
 
   @override
-  String get repr => switch (this) {
-    HabitCategory.mind => "Mind",
-    HabitCategory.health => "Health & Fitness",
-    HabitCategory.productivity => "Productivity",
-    HabitCategory.finance => "Finance",
-    HabitCategory.social => "Social",
-    HabitCategory.environment => "Environment",
-    HabitCategory.self => "Self-care",
-    HabitCategory.other => "Other",
-  };
+  String getRepr(context) => AppLocalizations.of(context)!.habitCategory(name);
 }
 
 enum HabitIntent implements HabitAspect {
@@ -32,7 +24,7 @@ enum HabitIntent implements HabitAspect {
   quit;
 
   @override
-  String get repr => name.capitalise();
+  String getRepr(context) => AppLocalizations.of(context)!.habitIntent(name);
 }
 
 enum HabitTime implements HabitAspect {
@@ -43,7 +35,7 @@ enum HabitTime implements HabitAspect {
   night;
 
   @override
-  String get repr => name.capitalise();
+  String getRepr(context) => AppLocalizations.of(context)!.habitTime(name);
 
   static HabitTime getTime() {
     final hour = DateTime.now().toLocal().hour;
@@ -61,7 +53,8 @@ enum HabitStreakGoal implements HabitAspect {
   monthly;
 
   @override
-  String get repr => name.capitalise();
+  String getRepr(context) =>
+      AppLocalizations.of(context)!.habitStreakGoal(name);
 }
 
 enum HabitTrackingMethod implements HabitAspect {
@@ -69,8 +62,6 @@ enum HabitTrackingMethod implements HabitAspect {
   value;
 
   @override
-  String get repr => switch (this) {
-    HabitTrackingMethod.tick => "Tick-off to track",
-    HabitTrackingMethod.value => "Track by value",
-  };
+  String getRepr(context) =>
+      AppLocalizations.of(context)!.habitTrackingMethod(name);
 }

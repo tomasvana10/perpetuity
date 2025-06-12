@@ -28,4 +28,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helpAndFeedback => 'Help & feedback';
+
+  @override
+  String get credits => 'Credits';
+
+  @override
+  String habitCategory(String category) {
+    String _temp0 = intl.Intl.selectLogic(category, {
+      'mind': 'Mind',
+      'health': 'Health & Fitness',
+      'productivity': 'Productivity',
+      'finance': 'Finance',
+      'social': 'Social',
+      'environment': 'Environment',
+      'self': 'Self-care',
+      'misc': 'Miscellaneous',
+      'other': 'Unknown',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String habitIntent(String intent) {
+    String _temp0 = intl.Intl.selectLogic(intent, {
+      'build': 'Build',
+      'quit': 'Quit',
+      'other': 'Unknown',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String habitTime(String time) {
+    String _temp0 = intl.Intl.selectLogic(time, {
+      'any': 'Any',
+      'morning': 'Morning',
+      'afternoon': 'Afternoon',
+      'evening': 'Evening',
+      'night': 'Night',
+      'other': 'Unknown',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String habitStreakGoal(String goal) {
+    String _temp0 = intl.Intl.selectLogic(goal, {
+      'none': 'None',
+      'daily': 'Daily',
+      'weekly': 'Weekly',
+      'monthly': 'Monthly',
+      'other': 'Unknown',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String habitTrackingMethod(String method) {
+    String _temp0 = intl.Intl.selectLogic(method, {
+      'tick': 'Tick-off to track',
+      'value': 'Track by value',
+      'other': 'Unknown',
+    });
+    return '$_temp0';
+  }
 }

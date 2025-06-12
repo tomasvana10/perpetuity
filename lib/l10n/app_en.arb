@@ -13,5 +13,47 @@
   "settings": "Settings",
   "@settings": {},
   "helpAndFeedback": "Help & feedback",
-  "@helpAndFeedback": {}
+  "@helpAndFeedback": {},
+  "credits": "Credits",
+  "@credits": {},
+  "habitCategory": "{category, select, mind{Mind} health{Health & Fitness} productivity{Productivity} finance{Finance} social{Social} environment{Environment} self{Self-care} misc{Miscellaneous} other{Unknown}}",
+  "@habitCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "habitIntent": "{intent, select, build{Build} quit{Quit} other{Unknown}}",
+  "@habitIntent": {
+    "placeholders": {
+      "intent": {
+        "type": "String"
+      }
+    }
+  },
+  "habitTime": "{time, select, any{Any} morning{Morning} afternoon{Afternoon} evening{Evening} night{Night} other{Unknown}}",
+  "@habitTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "habitStreakGoal": "{goal, select, none{None} daily{Daily} weekly{Weekly} monthly{Monthly} other{Unknown}}",
+  "@habitStreakGoal": {
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "habitTrackingMethod": "{method, select, tick{Tick-off to track} value{Track by value} other{Unknown}}",
+  "@habitTrackingMethod": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  }
 }
