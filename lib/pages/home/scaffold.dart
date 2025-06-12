@@ -12,15 +12,15 @@ class HomePageScaffold extends StatefulWidget {
 }
 
 class _HomePageScaffoldState extends State<HomePageScaffold> {
-  int currentPageIndex = 0;
+  int _currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) =>
-            setState(() => currentPageIndex = index),
-        selectedIndex: currentPageIndex,
+            setState(() => _currentPageIndex = index),
+        selectedIndex: _currentPageIndex,
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         destinations: widget.destinations.map((dest) {
           final icons = (dest as HomePageTab).icons;
@@ -33,7 +33,7 @@ class _HomePageScaffoldState extends State<HomePageScaffold> {
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(16, 16, 0, 0),
-        child: widget.destinations[currentPageIndex],
+        child: widget.destinations[_currentPageIndex],
       ),
       drawer: NavigationDrawer(
         children: [
@@ -59,7 +59,7 @@ class _HomePageScaffoldState extends State<HomePageScaffold> {
         ],
       ),
       appBar: PerpetuityAppBar(
-        title: (widget.destinations[currentPageIndex] as HomePageTab)
+        title: (widget.destinations[_currentPageIndex] as HomePageTab)
             .getLocalisedIdent(context),
       ),
     );
