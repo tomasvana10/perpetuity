@@ -9,8 +9,7 @@ class PerpetuityAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title),
-      centerTitle: true,
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
       leading: IconButton(
         onPressed: () => Scaffold.of(context).openDrawer(),
         icon: Icon(Icons.menu),
