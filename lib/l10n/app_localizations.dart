@@ -99,6 +99,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Dashboard'**
   String get dashboard;
+
+  /// No description provided for @habits.
+  ///
+  /// In en, this message translates to:
+  /// **'Habits'**
+  String get habits;
+
+  /// No description provided for @charts.
+  ///
+  /// In en, this message translates to:
+  /// **'Charts'**
+  String get charts;
+
+  /// No description provided for @newHabit.
+  ///
+  /// In en, this message translates to:
+  /// **'New habit'**
+  String get newHabit;
+
+  /// No description provided for @perpetuity.
+  ///
+  /// In en, this message translates to:
+  /// **'Perpetuity'**
+  String get perpetuity;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @helpAndFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & feedback'**
+  String get helpAndFeedback;
 }
 
 class _AppLocalizationsDelegate

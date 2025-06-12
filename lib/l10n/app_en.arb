@@ -1,5 +1,17 @@
 {
   "@@locale": "en",
   "dashboard": "Dashboard",
-  "@dashboard": {}
+  "@dashboard": {},
+  "habits": "Habits",
+  "@habits": {},
+  "charts": "Charts",
+  "@charts": {},
+  "newHabit": "New habit",
+  "@newHabit": {},
+  "perpetuity": "Perpetuity",
+  "@perpetuity": {},
+  "settings": "Settings",
+  "@settings": {},
+  "helpAndFeedback": "Help & feedback",
+  "@helpAndFeedback": {}
 }

@@ -10,4 +10,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dashboard => 'Dashboard';
+
+  @override
+  String get habits => 'Habits';
+
+  @override
+  String get charts => 'Charts';
+
+  @override
+  String get newHabit => 'New habit';
+
+  @override
+  String get perpetuity => 'Perpetuity';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get helpAndFeedback => 'Help & feedback';
 }
