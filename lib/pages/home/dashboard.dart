@@ -23,6 +23,6 @@ class DashboardPage extends StatefulWidget implements HomePageTab {
 class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
-    return Text("bruh");
+    return Text(widget.getLocalisedIdent(context));
   }
 }

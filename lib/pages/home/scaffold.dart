@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:perpetuity/components/app_bar.dart";
 import "package:perpetuity/components/nav_drawer.dart";
+import "package:perpetuity/l10n/app_localizations.dart";
 import "package:perpetuity/pages/home/home_page_tab.dart";
 
 class HomePageScaffold extends StatefulWidget {
@@ -30,6 +31,7 @@ class _HomePageScaffoldState extends State<HomePageScaffold> {
             icon: icons.inactive,
             selectedIcon: icons.active,
             label: (dest as HomePageTab).getLocalisedIdent(context),
+            tooltip: "",
           );
         }).toList(),
       ),
@@ -39,7 +41,7 @@ class _HomePageScaffoldState extends State<HomePageScaffold> {
         child: widget.destinations[_currentPageIndex],
       ),
       drawer: PerpetuityNavigationDrawer(),
-      appBar: PerpetuityAppBar(title: "Perpetuity"),
+      appBar: PerpetuityAppBar(title: AppLocalizations.of(context)!.perpetuity),
     );
   }
 }
