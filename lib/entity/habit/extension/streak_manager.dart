@@ -65,7 +65,7 @@ extension HabitStreakManagerExtension on HabitStreakManager {
 
     final completions = _getHabitCompletionsOfStreakInterval(habitCompletions);
 
-    if (completions == streakIntervalCompletions) {
+    if (completions == streakCompletions) {
       streak++;
       if (streak > bestStreak) bestStreak = streak;
     }

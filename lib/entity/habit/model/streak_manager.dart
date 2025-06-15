@@ -23,13 +23,13 @@ typedef HabitStreakLogEntry = ({
 class HabitStreakManager {
   @enumerated
   HabitStreakGoal streakGoal;
-  int streakIntervalCompletions;
+  int streakCompletions;
   int streak;
   int bestStreak;
 
   HabitStreakManager({
     this.streakGoal = HabitStreakGoal.daily,
-    this.streakIntervalCompletions = 0,
+    this.streakCompletions = 1,
     this.streak = 0,
     this.bestStreak = 0,
   });

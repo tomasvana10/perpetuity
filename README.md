@@ -1,6 +1,6 @@
 # perpetuity
 
-A free, feature rich habit tracker using Material UI and Flutter.
+A free, simple habit tracker for Android using Material 3 and Flutter.
 
 
 ### TODO (in rough order of completion)

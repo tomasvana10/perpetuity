@@ -11,7 +11,8 @@ class Habit {
   Id id = Isar.autoIncrement;
 
   String name;
-  String description;
+  String notes;
+  String materialIcon;
   @enumerated
   HabitCategory category;
   @enumerated
@@ -25,7 +26,8 @@ class Habit {
 
   Habit({
     required this.name,
-    required this.description,
+    required this.notes,
+    required this.materialIcon,
     required this.category,
     required this.intent,
     required this.schedule,

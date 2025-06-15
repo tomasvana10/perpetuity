@@ -1,11 +1,4 @@
-import "package:flutter/widgets.dart";
-import "package:perpetuity/l10n/app_localizations.dart";
-
-abstract interface class HabitAspect {
-  String getRepr(BuildContext context);
-}
-
-enum HabitCategory implements HabitAspect {
+enum HabitCategory {
   mind,
   health,
   productivity,
@@ -13,29 +6,17 @@ enum HabitCategory implements HabitAspect {
   social,
   environment,
   self,
-  misc;
-
-  @override
-  String getRepr(context) => AppLocalizations.of(context)!.habitCategory(name);
+  misc,
 }
 
-enum HabitIntent implements HabitAspect {
-  build,
-  quit;
+enum HabitIntent { build, quit }
 
-  @override
-  String getRepr(context) => AppLocalizations.of(context)!.habitIntent(name);
-}
-
-enum HabitTime implements HabitAspect {
+enum HabitTime {
   any,
   morning,
   afternoon,
   evening,
   night;
-
-  @override
-  String getRepr(context) => AppLocalizations.of(context)!.habitTime(name);
 
   static HabitTime getTime() {
     final hour = DateTime.now().toLocal().hour;
@@ -46,22 +27,6 @@ enum HabitTime implements HabitAspect {
   }
 }
 
-enum HabitStreakGoal implements HabitAspect {
-  none,
-  daily,
-  weekly,
-  monthly;
+enum HabitStreakGoal { none, daily, weekly, monthly }
 
-  @override
-  String getRepr(context) =>
-      AppLocalizations.of(context)!.habitStreakGoal(name);
-}
-
-enum HabitTrackingMethod implements HabitAspect {
-  tick,
-  value;
-
-  @override
-  String getRepr(context) =>
-      AppLocalizations.of(context)!.habitTrackingMethod(name);
-}
+enum HabitTrackingMethod { tick, value }
