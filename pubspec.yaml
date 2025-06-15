@@ -1,7 +1,7 @@
 name: perpetuity
 description: "A free, simple habit tracker"
 publish_to: 'none'
-version: 0.5.0
+version: 0.6.0
 
 environment:
   sdk: ^3.8.1
